@@ -49,39 +49,29 @@ Minutes were taken by Darja Jovanovic.
 ### [SIP-34: Right-Associative By-Name Operators](http://docs.scala-lang.org/sips/right-associative-by-name-operators.html) (Numbered: SIP-34)
 [YouTube time: 00.31''- 2'03''](https://youtu.be/aIc-o1pcRhw?t=32)
 
-**Jorge** states that    
+**Jorge** states that this SIP is uncontroversial and that Committee should vote, if there are no further comments. **Sébastien** adds that community didn't have any comments either.
+The Committee votes.
 
-
-**Conclusion**: The SIP is numbered as "SIP-34", by unanimity and it will be at disposal for a month for the community comments.
+**Conclusion**: The SIP is accepted by unanimity.
 
 ### [SIP-35: Opaque types](http://docs.scala-lang.org/sips/opaque-types.html) (Numbered: SIP-35)
-[YouTube time: 8'27''-51'13''](https://youtu.be/yzTpVbTUj18?t=507)
+[YouTube time: 02'03''-03'12''](https://youtu.be/aIc-o1pcRhw?t=122)
 
-**Sébastien**, as a reviewer, is asked to present the SIP to the Committee and Public.
-The Committee likes the proposal overall, though it has some questions/concerns.
-In a 40min discussion the questions raised were as follows:
+**Jorge** gives a brief update about the stage of the eSIP-35, says that both community and the committee members gave a lot of feedback.
+They are working on updates, but don't have any to share for this meeting.
 
-1. Articulating the motivation, emphasis on what is the concrete use of it
-2. Articulating the direction regarding the value classes
-3. How do we explain to users having both opaque types and multi parameter value classes **Eugene** [(link 1)](https://youtu.be/yzTpVbTUj18?t=1005); [(link 2)](https://youtu.be/yzTpVbTUj18?t=1094)
-- Even "getting rid" of value classes, and letting opaque taking its place? **Seth** [(link)](https://youtu.be/yzTpVbTUj18?t=1753)
-4. The importance of consistency across the language **Josh** [(link)](https://youtu.be/yzTpVbTUj18?t=1442)
-5. Mention impact on Valhalla, value types at the JVM level
-6. Investigate the possibilities for exposing bounds **Martin** [(link)](https://youtu.be/yzTpVbTUj18?t=2092)
-7. Opaque type companion **Iulian** [(link)](https://youtu.be/yzTpVbTUj18?t=788)
-- Raising confusion about the companion relation **Heather** and **Seth** [(link)](https://youtu.be/yzTpVbTUj18?t=1545)
-Syntax "new" "type"
-
-
-**Conclusion**: The SIP is numbered as "SIP 35" by unanimous vote. The above mentioned should to be addressed for the next meeting.
-
+**Conclusion**: The SIP-35 will be discussed on the next meeting.
 
 ### [SIP-33: Match infix and prefix types to meet expression rules](http://docs.scala-lang.org/sips/make-types-behave-like-expressions.html)
+[YouTube time: 03'14''-03'12''](https://youtu.be/aIc-o1pcRhw?t=194)
 
-Still waiting on the implementation updates, therefore this item will be discussed in the next SIP Meeting.
+**Jorge** introduces the SIP adding that Oron provided the implementation for associativity of the infix type, not for the prefix type. **Martin** makes the remark that Dotty does the same thing. He continues by saying he is "skeptical" about *prefix* types, as it seems to be another feature and "a necessary compromise to the mathematical conventions". On the other hand, he believes that once the roots for the associativity are fixed ?? PLEASE ADD, I DONT UNDERSTAND WHAT HE SAYS.
+**Martin** concludes by saying "yes" to the infix part and "no" to the prefix part. **Adriaan** agrees.
+
+
 
 ### [SIP-28 and SIP-29: Inline and meta](http://docs.scala-lang.org/sips/pending/inline-meta.html)
-[YouTube time: 51'40'' until the end](https://youtu.be/yzTpVbTUj18?t=3100)
+[YouTube time: 10'05'' until the end](https://youtu.be/aIc-o1pcRhw?t=605)
 
 **Eugene** gives a brief history of this SIP development, shares the good news and suggests how to proceed.
 
