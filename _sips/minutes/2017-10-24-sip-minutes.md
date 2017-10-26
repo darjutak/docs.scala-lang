@@ -184,11 +184,38 @@ Open discussion about the above proposed
 [YouTube time: 23'39'' until the end](https://youtu.be/aIc-o1pcRhw?t=1419)
 
 About 40 minutes were dedicated to finding a common ground for the  direction of the project as well as the technical details that should be addressed going forward.
-**Adriaan** immediately pointed out that by taking on the "hard stuff" to deal with first will give clarity to what could be supported for the next year. He suggests tackling the more ambitious features first, by experimenting in a current macro system, is a "cheap way" to find out the "unknown".
-Take the points *challenges* he makes in a list:
+
+**Adriaan** immediately pointed out that by taking on the "hard stuff" to deal with first will give clarity to what could be supported for the next year. He suggests tackling the more ambitious features first, by experimenting in a current macro system, is a "cheap way" to find out the "unknown". The goal would be to find out how to implement it in the next ?? system.
+Take the points (*challenges*) he makes in a list:
 [(https://youtu.be/aIc-o1pcRhw?t=1673)]
 
+**Eugene**
+https://youtu.be/aIc-o1pcRhw?t=1877
+Agrees both with **Adriaan** and **Olaf**, on one hand "prototyping" in the current macro system can be beneficial e.g ??automatic owner j fixer?? but on the other, scala reflect is fundamentally different from the current macro system and even if the tests are run there might be no point to it.
+He does agree with **Olaf** that classification of the macros is useful. Concluding that supporting the generation transformation macros shouldn't be that hard, but than the question of how valuable to the community these are needs to be raised.
+
+Other question raised:
+
+- discuss the ??"quasi code"?? (by **Martin**, **Olaf** and **Heather**)
+ please add.
+ "How restrictive is to demand all quasi-code to be fully typed instead of free name reference to type up the abstract" **Martin**
+
+ - White box / Black box(by **Martin** / **Olaf**)
+  Main concern "when do tools have to run the untrusted code?"
+ - Annotation macros (Community)
+ **Martin** insists on splitting the language to "meta scala" and "scala", leaving the paradise functionality in "meta scala" but that scala assumes the things that have proven themselves e.g. deriving macros
+ add why
+ He strongly believes that macro annotations are a "complete abuse of macros" and will make sure that "this things are not possible anymore"
+- The interaction between type inference and macros (**Iulian**)
+quote https://youtu.be/aIc-o1pcRhw?t=3436
+**Adriaan** thinks that's a great example for the language feature.
+
+- Inline (**Martin**)
+"Keep inline as a sort of enabler of meta to get full Macros. MAin job moving the code from A to B, doing simplifications, wheres actual generation and inspection of ??quasi code?? is the job of meta."
+Adding that it is an interesting idea to split generation and inspection
+
+- Untype trees ??
+Please add
 
 
-
-**Conclusion**: The SIP is delayed until **Olaf** gathers the team and has some new updates to share with the Committee.
+**Conclusion**: 
