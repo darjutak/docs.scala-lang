@@ -78,6 +78,8 @@ The feedback will be given to the author.
 ### [SIP-28 and SIP-29: Inline and meta](http://docs.scala-lang.org/sips/pending/inline-meta.html)
 [YouTube time: 10'05'' until the end](https://youtu.be/aIc-o1pcRhw?t=605)
 
+**Jorge** introduces **Olaf** as a new Team Lead of SIP-28 and SIP-29.
+**Heather** pitches in to contextualize **Olaf's** following presentation. She makes clear that the SIPs are not to be voted on today. As **Olaf** had a month to familiarize himself with the project, he will not speak about the implementation or problem-solving, but update the Committee about the "current data point in the design space"
 
 **Olaf** introduces himself as the new SIP project lead, and goes as  [YouTube time: 10'05'' - 15'32''](https://youtu.be/aIc-o1pcRhw?t=605):
 
@@ -87,7 +89,7 @@ From the last SIP meeting:
 >  Conclusion: The SIP is delayed until Olaf gathers the team and has some new
 >  updates to share with the Committee.
 
-"We have a team of contributors:
+We have a team of contributors:
 - myself, project lead working for the Scala Center on proposal SCP-014:
   towards "non-experimental" macro system (my interpretation: portable and
   robust macros).
@@ -110,17 +112,17 @@ My role as I see it is to
 
 What I'd like to get out of this meeting is to present our findings from the
 past 3 weeks, give my personal recommendations and collect your feedback on how
-to prioritize our upcoming work"
+to prioritize our upcoming work
 
 **Olaf** continues by presenting his overview of the project
 
 [YouTube time: 15'32'' - 23'39''](https://youtu.be/aIc-o1pcRhw?t=930)
 
-## SIP-29: meta
+*SIP-29: meta*
 
 - Scoping changes are a concern.
 
-## Macros by feature needs
+*Macros by feature needs*
 
 I think there are roughly four categories of macros grouped by features
 they require from the macro system: code transformation, code generation,
@@ -150,7 +152,7 @@ We can view these categories by the features they require:
 | Solvable with SIP-28  |                |            | x      |         |
 
 
-### Transformation macros
+*Transformation macros*
 
 There are still many hard/open/unsolved problems, most notably:
 * splicing untyped tree under typed trees causes breaks typer invariants, causing compiler crashes
@@ -171,14 +173,20 @@ These solutions have different trade-offs with regards to
 - breaking changes with existing macro ecosystem
 
 
-### Generation macros
+*Generation macros*
 
 There seem to be no roadblockers for supporting macros that do no tree
 inspection, only untyped tree construction.
-Code generation macros cannot change
+Code generation macros cannot change.
 
 Open discussion about the above proposed
-[YouTube time: 23'39''](https://youtu.be/aIc-o1pcRhw?t=1419)
+[YouTube time: 23'39'' until the end](https://youtu.be/aIc-o1pcRhw?t=1419)
+
+About 40 minutes were dedicated to agreeing on a direction of the project as well as the technical details that should be addressed.
+**Adriaan** immediately pointed out that by taking on the "hard stuff" to deal with first will give clarity to what could be supported for the next year. He suggests tackling the more ambitious features first, by experimenting in a current macro system, is a "cheap way" to find out the "unknown".
+Take the points *challenges* he makes in a list:
+[(https://youtu.be/aIc-o1pcRhw?t=1673)]
+
 
 
 
