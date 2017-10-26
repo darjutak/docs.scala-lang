@@ -11,7 +11,7 @@ The following agenda was distributed to attendees:
 
 |Topic|Reviewers| Accepted/Rejected |
 | --- | --- | --- |
-| [SIP-34: Right-Associative By-Name Operators](http://docs.scala-lang.org/sips/right-associative-by-name-operators.html) | Adriaan Moors | Pending |
+| [SIP-34: Right-Associative By-Name Operators](http://docs.scala-lang.org/sips/right-associative-by-name-operators.html) | Adriaan Moors | Accepted |
 | [SIP-35: Opaque types](http://docs.scala-lang.org/sips/opaque-types.html) | Sébastien Doeraene | Pending |
 | [SIP-33: Match infix and prefix types to meet expression rules](http://docs.scala-lang.org/sips/make-types-behave-like-expressions.html)| Josh Suereth | Pending |
 |[SIP-28 and SIP-29: Inline meta](http://docs.scala-lang.org/sips/inline-meta.html)|Josh Suereth and Iulian Dragos| Pending |
@@ -19,7 +19,7 @@ The following agenda was distributed to attendees:
 Jorge Vicente Cantero was the Process Lead and Darja Jovanovic as secretary.
 
 ## Date and Location
-The meeting took place on the 24th October 2017 via Google Hangouts at EPFL in Lausanne, Switzerland as well as other locations.
+The meeting took place on the 24th October 2017 at 5 PM CEST via Google Hangouts at EPFL in Lausanne, Switzerland as well as other locations.
 
 [Watch on Scala Center YouTube channel](https://youtu.be/aIc-o1pcRhw)
 
@@ -55,9 +55,9 @@ The Committee votes.
 **Conclusion**: The SIP is accepted by unanimity.
 
 ### [SIP-35: Opaque types](http://docs.scala-lang.org/sips/opaque-types.html)
-[YouTube time: 02'03''-03'12''](https://youtu.be/aIc-o1pcRhw?t=122)
+[YouTube time: 02'03''- 10'05''](https://youtu.be/aIc-o1pcRhw?t=122)
 
-**Jorge** gives a brief update about the stage of the eSIP-35, says that both community and the committee members gave a lot of feedback.
+**Jorge** gives a brief update about the stage of the SIP-35, says that both community and the committee members gave a lot of feedback.
 They are working on updates, but don't have any to share for this meeting.
 
 **Conclusion**: The SIP-35 will be discussed on the next meeting.
@@ -81,7 +81,8 @@ The feedback will be given to the author.
 **Jorge** introduces **Olaf** as a new Team Lead of SIP-28 and SIP-29.
 **Heather** pitches in to contextualize **Olaf's** following presentation. She makes clear that the SIPs are not to be voted on today. As **Olaf** had a month to familiarize himself with the project, he will not speak about the implementation or problem-solving, but update the Committee about the "current data point in the design space"
 
-**Olaf** introduces himself as the new SIP project lead, and goes as  [YouTube time: 10'05'' - 15'32''](https://youtu.be/aIc-o1pcRhw?t=605):
+**Olaf** introduces himself as the new SIP project lead, and goes as
+[YouTube time: 10'05'' - 15'32''](https://youtu.be/aIc-o1pcRhw?t=605):
 
 SIP-29: Macros update October 2017
 
@@ -185,37 +186,48 @@ Open discussion about the above proposed
 
 About 40 minutes were dedicated to finding a common ground for the  direction of the project as well as the technical details that should be addressed going forward.
 
-**Adriaan** immediately pointed out that by taking on the "hard stuff" to deal with first will give clarity to what could be supported for the next year. He suggests tackling the more ambitious features first, by experimenting in a current macro system, is a "cheap way" to find out the "unknown". The goal would be to find out how to implement it in the next ?? system.
-Take the points (*challenges*) he makes in a list:
+**Adriaan** immediately pointed out that by taking on the "hard stuff" to deal with first will give clarity to what could be supported for the next year. He suggests tackling the more ambitious features first, by experimenting in a current macro system, is a "cheap way" to find out the "unknown". The goal would be to find out how to implement it in the next macro system.
+Challenges that can be taken on:
 [(https://youtu.be/aIc-o1pcRhw?t=1673)]
+- splicing trees, ending up with owner chains that are correct
+- hygiene
+- better tools for macro authors, to experiment in a current macro system
 
 **Eugene**
 https://youtu.be/aIc-o1pcRhw?t=1877
-Agrees both with **Adriaan** and **Olaf**, on one hand "prototyping" in the current macro system can be beneficial e.g ??automatic owner j fixer?? but on the other, scala reflect is fundamentally different from the current macro system and even if the tests are run there might be no point to it.
+Agrees both with **Adriaan** and **Olaf**, on one hand "prototyping" in the current macro system can be beneficial e.g automatic owner chain fixer but on the other, scala reflect is fundamentally different from the prototype macro system and even if the tests are run there might be no point to it.
 He does agree with **Olaf** that classification of the macros is useful. Concluding that supporting the generation transformation macros shouldn't be that hard, but than the question of how valuable to the community these are needs to be raised.
+-- OLAF NEEDS TO RE-WRITE THIS PART --
 
 Other question raised:
 
-- discuss the ??"quasi code"?? (by **Martin**, **Olaf** and **Heather**)
- please add.
- "How restrictive is to demand all quasi-code to be fully typed instead of free name reference to type up the abstract" **Martin**
+- discuss the quasiquote (by **Martin**, **Olaf** and **Heather**)
+ Go to: https://youtu.be/aIc-o1pcRhw?t=1960
+ "How restrictive is to demand all quasiquote to be fully typed instead of free name reference to type up the abstract" **Martin**
+-- PLEASE SUMMARISE THE MAIN POINTS IN THIS DISCUSSION --
 
  - White box / Black box(by **Martin** / **Olaf**)
   Main concern "when do tools have to run the untrusted code?"
+
  - Annotation macros (Community)
- **Martin** insists on splitting the language to "meta scala" and "scala", leaving the paradise functionality in "meta scala" but that scala assumes the things that have proven themselves e.g. deriving macros
- add why
+ **Martin** insists on leaving the paradise functionality in "meta/template scala" but that *scala* assumes only the things that have proven themselves e.g. simulacrum
+ -- PLEASE ADD THE REASON IF NECESSARY
+
  He strongly believes that macro annotations are a "complete abuse of macros" and will make sure that "this things are not possible anymore"
+
 - The interaction between type inference and macros (**Iulian**)
 quote https://youtu.be/aIc-o1pcRhw?t=3436
+-- OLAF, PLEASE MAKE SURE THE SENSE IS MADE OF WHAT IULIAN SAID --
+
 **Adriaan** thinks that's a great example for the language feature.
 
 - Inline (**Martin**)
-"Keep inline as a sort of enabler of meta to get full Macros. MAin job moving the code from A to B, doing simplifications, wheres actual generation and inspection of ??quasi code?? is the job of meta."
-Adding that it is an interesting idea to split generation and inspection
+"Keep inline as a sort of enabler of meta to get full macros. Main job moving the code from A to B, doing simplifications, wheres actual generation and inspection of quasiquote is the job of macros."
+Adding that it is also an interesting idea to split generation and inspection
 
 - Untype trees ??
-Please add
+https://youtu.be/aIc-o1pcRhw?t=3752
+-- OLAF PLEASE PUT A SENTENCE OR TWO --
 
 
-**Conclusion**: 
+**Conclusion**: Moving forward, **Olaf** and the team should focus on the above suggested and keep the Committee informed about the progress. The SIP will be up on the agenda once it's ready with the implementation, by **Olaf** estimation, within 4 to 6 months.
