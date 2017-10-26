@@ -81,7 +81,7 @@ The feedback will be given to the author.
 
 **Olaf** introduces himself as the new SIP project lead, and goes as  [YouTube time: 10'05'' - 15'32''](https://youtu.be/aIc-o1pcRhw?t=605):
 
-# SIP-29: Macros update October 2017
+SIP-29: Macros update October 2017
 
 From the last SIP meeting:
 >  Conclusion: The SIP is delayed until Olaf gathers the team and has some new
@@ -111,6 +111,74 @@ My role as I see it is to
 What I'd like to get out of this meeting is to present our findings from the
 past 3 weeks, give my personal recommendations and collect your feedback on how
 to prioritize our upcoming work"
+
+**Olaf** continues by presenting his overview of the project
+
+[YouTube time: 15'32'' - 23'39''](https://youtu.be/aIc-o1pcRhw?t=930)
+
+## SIP-29: meta
+
+- Scoping changes are a concern.
+
+## Macros by feature needs
+
+I think there are roughly four categories of macros grouped by features
+they require from the macro system: code transformation, code generation,
+inlining for performance reasons, and "linting".
+
+Example:
+
+|                    | transformation | generation | inline | linting |
+|------------------- | -------------- | ---------- | ------ | ------- |
+| scala-async        |  x             |            |        |         |
+| ScalaTest assert   |  x             |            |        |         |
+| f"" interpolator   |  x             |            |        |         |
+| Json.serialize\[T] |                | x          |        |         |
+| ScalaTest Position |                | x          |        |         |
+| sourcecode.Name    |                | x          |        |         |
+| log4s logger.info  |                |            | x      |         |
+| Refined Positive   |                |            |        | x       |
+
+We can view these categories by the features they require:
+
+|                       | transformation | generation | inline | linting |
+| -------------------   | -------------- | ---------- | ------ | ------- |
+| Inspect trees         | x              |            | x      | x       |
+| Inspect types/symbols | x              | x          |        |         |
+| Construct trees       | x              | x          |        |         |
+| Report errors         | x              | x          | x      | x       |
+| Solvable with SIP-28  |                |            | x      |         |
+
+
+### Transformation macros
+
+There are still many hard/open/unsolved problems, most notably:
+* splicing untyped tree under typed trees causes breaks typer invariants, causing compiler crashes
+* splicing typed tree under untyped trees causes owner chain corruptions, causing compiler crashes
+
+Several techniques have been explored to solve these problems:
+
+* c.untypecheck, breaks for certain tree nodes due to non-idempotency
+* c.typecheck or manually construct typed trees, requires expertise
+  from macro authors and can still cause cryptic errors in later phases.
+* automatic repair of owner chains, works for some limited macros
+* automatic typechecking of spliced untyped trees, little explored
+
+These solutions have different trade-offs with regards to
+
+- feature support
+- portability
+- breaking changes with existing macro ecosystem
+
+
+### Generation macros
+
+There seem to be no roadblockers for supporting macros that do no tree
+inspection, only untyped tree construction.
+Code generation macros cannot change
+
+Open discussion about the above proposed
+[YouTube time: 23'39''](https://youtu.be/aIc-o1pcRhw?t=1419)
 
 
 
