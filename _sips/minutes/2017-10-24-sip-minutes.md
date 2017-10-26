@@ -63,7 +63,7 @@ They are working on updates, but don't have any to share for this meeting.
 **Conclusion**: The SIP-35 will be discussed on the next meeting.
 
 ### [SIP-33: Match infix and prefix types to meet expression rules](http://docs.scala-lang.org/sips/make-types-behave-like-expressions.html)
-[YouTube time: 03'14''-03'12''](https://youtu.be/aIc-o1pcRhw?t=194)
+[YouTube time: 03'12''-03'12''](https://youtu.be/aIc-o1pcRhw?t=194)
 
 **Jorge** introduces the SIP adding that Oron provided the implementation for associativity of the infix type, not for the prefix type. **Martin** makes the remark that Dotty does the same thing. He continues by saying he is "skeptical" about *prefix* types, as it seems to be another feature and "a necessary compromise to the mathematical conventions". On the other hand, he believes that once the roots for the associativity are fixed **?? PLEASE ADD, I DONT UNDERSTAND WHAT HE SAYS.**
 **Martin** concludes by saying "yes" to the infix part and "no" to the prefix part. **Adriaan** agrees and adds that the best way to go forward would be to split up the SIP, based on the "one idea one SIP" motto, noting that *prefix* and *infix* types, even though related, are not dependent therefore should be treated separately.
@@ -78,15 +78,40 @@ The feedback will be given to the author.
 ### [SIP-28 and SIP-29: Inline and meta](http://docs.scala-lang.org/sips/pending/inline-meta.html)
 [YouTube time: 10'05'' until the end](https://youtu.be/aIc-o1pcRhw?t=605)
 
-**Eugene** gives a brief history of this SIP development, shares the good news and suggests how to proceed.
 
-**Eugene** is proud to report that the new prototype "looks good" and was published at Scala Days 2017. It can handle the def macros, macro notations and other.
-Furthermore, there is a possibility of scaling it up to potentially replace the Scala reflect macros.
-He raises the concern about moving forward.
-He points out that so far the proposal was done on the voluntary basis and therefore the progress was slowed down.
-However, after the Advisory Board approved to involve Scala Center to assist the community with "productionizing the existing prototype", there is a bright future for the project.
+**Olaf** introduces himself as the new SIP project lead, and goes as  [YouTube time: 10'05'' - 15'32''](https://youtu.be/aIc-o1pcRhw?t=605):
 
-That said, **Eugene** suggests to delay the proposal in order to allow the time to see what comes out of the experiments.
-After **Heather** raises the question about project transfer, proposing **Olaf** as a new lead and **Eugene** as an advisor, **Eugene** agrees and is happy that the project can move forward.
+# SIP-29: Macros update October 2017
+
+From the last SIP meeting:
+>  Conclusion: The SIP is delayed until Olaf gathers the team and has some new
+>  updates to share with the Committee.
+
+"We have a team of contributors:
+- myself, project lead working for the Scala Center on proposal SCP-014:
+  towards "non-experimental" macro system (my interpretation: portable and
+  robust macros).
+- Liu Fengyun, on behalf of the Dotty team.
+- Mikhail Mutcianco, on behalf of Jetbrains.
+
+We are in a dialogue with:
+- Eugene Burmako
+- Scala community via contributors.scala-lang.org
+- Heather Miller
+- Ryan Culpepper
+- Adriaan Moors/Jason Zaugg, Scala compiler team
+
+
+My role as I see it is to
+- communicate with involved parties,
+- research the macro landscape/ecosystem,
+- coordinate engineering efforts on the new macro system so that it 1) addresses
+  existing pains and 2) at least something is delivered within a timeline of 4-6 months.
+
+What I'd like to get out of this meeting is to present our findings from the
+past 3 weeks, give my personal recommendations and collect your feedback on how
+to prioritize our upcoming work"
+
+
 
 **Conclusion**: The SIP is delayed until **Olaf** gathers the team and has some new updates to share with the Committee.
