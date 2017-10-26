@@ -180,9 +180,10 @@ inspection, only untyped tree construction.
 Code generation macros cannot change.
 
 Open discussion about the above proposed
+
 [YouTube time: 23'39'' until the end](https://youtu.be/aIc-o1pcRhw?t=1419)
 
-About 40 minutes were dedicated to agreeing on a direction of the project as well as the technical details that should be addressed.
+About 40 minutes were dedicated to finding a common ground for the  direction of the project as well as the technical details that should be addressed going forward.
 **Adriaan** immediately pointed out that by taking on the "hard stuff" to deal with first will give clarity to what could be supported for the next year. He suggests tackling the more ambitious features first, by experimenting in a current macro system, is a "cheap way" to find out the "unknown".
 Take the points *challenges* he makes in a list:
 [(https://youtu.be/aIc-o1pcRhw?t=1673)]
