@@ -1,6 +1,6 @@
 ---
 layout: sips
-title: SIP Meeting Minutes - 24th September 2018
+title: SIP Meeting Minutes - 22nd October 2018
 
 partof: minutes
 ---
@@ -21,12 +21,12 @@ Jorge Vicente Cantero was the Process Lead and Darja Jovanovic was the secretary
 
 
 ## Date and Location
-The meeting took place on the 24th September 2018 at 5 PM CEST via Google Hangouts at EPFL in Lausanne, Switzerland as well as other locations.
+The meeting took place on the 22nd October 2018 at 5 PM CEST via Google Hangouts at EPFL in Lausanne, Switzerland as well as other locations.
 
-[Watch on Scala Center YouTube channel](https://youtu.be/tEb4UF6RJrM)
+[Watch on Scala Center YouTube channel](https://www.youtube.com/watch?v=gctI7SRKp20)
 
 
-Minutes were taken by Darja Jovanovic and Jorge Vicente Cantero.
+Minutes were taken by Darja Jovanovic
 
 ## Attendees
 
